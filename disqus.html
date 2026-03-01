@@ -19,10 +19,14 @@
     const params = new URLSearchParams(window.location.search);
     const pageUrl = params.get('url');
     const pageId = params.get('id');
+    const pageTitle = params.get('title');
+    const pageDesc = params.get('desc');
 
     var disqus_config = function() {
         this.page.url = pageUrl;
         this.page.identifier = pageId;
+        this.page.title = pageTitle;
+        this.page.description = pageDesc || ''; 
     };
 
     (function() {
